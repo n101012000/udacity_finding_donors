@@ -14319,7 +14319,7 @@ The accuracy adn f-score of adaboost are significantly higher than Naive Bayes(N
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer: </strong> 
-Adaboost is a ensemble model which combine multiple individual weak learning hypotheses to build a robust model. Every weak learning hypotheses is suitable for different types of datasets. We could use give weight to these hypotheses which would decide their influence of the result, and the weight could be adjusted by each iteration. As a result, we could get a strong model after training.</p>
+Adaboost is a ensemble model which combine multiple individual weak learning hypotheses to build a robust model. Each weak leanrning hypotheses could classify some specific classes well but perform poorly on other classes. All samples would be given a weight which represents the probalility of chosen to next classifer. If some samples which don't been classified correctly would have higher weight, and next classifier would try to classify them. Adaboost would repeat these steps until the accuracy of the training dataset arrives the target a user set. During prediction, each weak learning hypotheses would predict individually, and give the final prediction according to the weights of hypotheses.</p>
 
 </div>
 </div>
@@ -14899,7 +14899,7 @@ pM4YACVJkjpjAJQkSeqMAVCSJKkzBkBJkqTOGAAlSZI68xfxGpsIdHxqbAAAAABJRU5ErkJggg==
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer:</strong>
-Only partially right. Age and hours-per-week affect the income, and the reasons I think are mentioned as Question 6. But education-num is more important than education which make me surprise. Among of them, I did't guess capital-gain and capital-loss as the impact factor. Nevertheless, adaboost gives these two features higher weights which means they may affect the model to predict income level.</p>
+Only partially right. Age and hours-per-week affect the income, so the trained model gives quantative weights of feature importances. Education-num is more important than education which make me surprise, but they are relevant. Among of first five most predictive features in model, I did't hit capital-gain and capital-loss. However, adaboost gives them higher weights which means that the data of these two features contain better indicators of income level of the people. Maybe the income of investment have a large proportion of total income in trageting customers with more than 50K income.</p>
 
 </div>
 </div>
